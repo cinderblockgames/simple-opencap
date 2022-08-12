@@ -1,4 +1,5 @@
 using System.Dynamic;
+using System.Text.Json.Serialization;
 using Newtonsoft.Json;
 
 namespace SimpleOpenCap.Data;
@@ -6,7 +7,7 @@ namespace SimpleOpenCap.Data;
 public class AddressInfo
 {
     
-    [JsonProperty("address_type")]
+    [JsonProperty("address_type"), JsonPropertyName("address_type")]
     public string AddressType { get; set; }
     
     public string Address { get; set; }
