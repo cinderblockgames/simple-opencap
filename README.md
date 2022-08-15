@@ -60,7 +60,9 @@ services:
       - ENABLE_SWAGGER=false
     volumes:
       # either the individual file or the whole folder can be mapped, but this file is required
-      - '/run/opencap/data.json:/app/config/data.json'
+      #- '/run/opencap/data.json:/app/config/data.json'
+      # prefer the directory so that the containers pick up changes
+      - '/run/opencap/config:/app/config'
     networks:
       - traefik
     deploy:
